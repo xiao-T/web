@@ -1,0 +1,2 @@
+注意：需要的插件请自行下载
+npm install 插件名 --save-dev
