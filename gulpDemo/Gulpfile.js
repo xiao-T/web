@@ -34,7 +34,7 @@ gulp.task('scripts', function() {
 
 //默认任务
 gulp.task('default', function() {
-	//默认执行
+	//默认执行任务
 	gulp.run('lint', 'sass', 'scripts');
 
 	//监视JS文件的变化
