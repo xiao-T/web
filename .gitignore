@@ -1,6 +1,5 @@
 ﻿#过滤文件夹
 /gulpDemo/node_modules/
-/gulpDemo/scss/
 
 #过滤文件
 /gulpDemo/Gulpfile.js
