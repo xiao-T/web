@@ -10,26 +10,26 @@ var jshint = require('gulp-jshint'),
 
 //lin task
 gulp.task('lint', function() {
-	gulp.src('js/*.js')
+	gulp.src('src/js/*.js')
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'));
 });
 
 //编译sass
 gulp.task('sass', function() {
-	gulp.src('scss/*.scss')
+	gulp.src('src/scss/*.scss')
 	.pipe(sass())
-	.pipe(gulp.dest('css'));
+	.pipe(gulp.dest('dist/css'));
 });
 
 //拼接、简化js文件
 gulp.task('scripts', function() {
-	gulp.src('js/*.js')
+	gulp.src('src/js/*.js')
 	.pipe(concat('index.js'))
-	.pipe(gulp.dest('dist'))
+	.pipe(gulp.dest('dist/js'))
 	.pipe(rename('index.min.js'))
 	.pipe(uglify())
-	.pipe(gulp.dest('dist'));
+	.pipe(gulp.dest('dist/js'));
 });
 
 //默认任务
@@ -38,12 +38,12 @@ gulp.task('default', function() {
 	gulp.run('lint', 'sass', 'scripts');
 
 	//监视JS文件的变化
-	gulp.watch('js/*.js', function() {
+	gulp.watch('src/js/*.js', function() {
 		gulp.run('lint', 'scripts');
 	});
 
 	//监视scss文件的变化 
-	gulp.watch('scss/*.scss', function() {
+	gulp.watch('src/scss/*.scss', function() {
 		gulp.run('sass');
 	});
 });
