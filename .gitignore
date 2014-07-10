@@ -2,5 +2,3 @@
 /gulpDemo/node_modules/
 
 #过滤文件
-/gulpDemo/Gulpfile.js
-/gulpDemo/package.json
